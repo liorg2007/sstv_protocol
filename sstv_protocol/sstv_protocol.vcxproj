@@ -149,11 +149,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Image.hpp" />
+    <ClInclude Include="Mode.hpp" />
+    <ClInclude Include="Robot36.hpp" />
     <ClInclude Include="Sound.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Robot36.cpp" />
     <ClCompile Include="Sound.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
