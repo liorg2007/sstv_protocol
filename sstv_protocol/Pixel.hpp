@@ -1,24 +1,26 @@
 #pragma once
 
+#include <stdint.h>
+
 #define RED_CONST 0.299
 #define GREEN_CONST 0.587
 #define BLUE_COSNT 0.114 
 
 struct RGBData {
-	__int8 red;
-	__int8 green;
-	__int8 blue;
+	uint8_t red;
+	uint8_t green;
+	uint8_t blue;
 };
 
 
 class Pixel {
 private:
-	__int8 _red;
-	__int8 _green;
-	__int8 _blue;
+	uint8_t _red;
+	uint8_t _green;
+	uint8_t _blue;
 
 public:
-	Pixel(__int8 red, __int8 green, __int8 blue);
+	Pixel(uint8_t red, uint8_t green, uint8_t blue);
 	RGBData GetRGB();
-	__int8 GetGrayScale();
+	uint8_t GetGrayScale();
 };
