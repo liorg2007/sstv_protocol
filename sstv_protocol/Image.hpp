@@ -14,7 +14,7 @@ private:
 public:
 	Image(const std::string& path);
 
-	static void resize(const cv::Mat& inImage, cv::Mat& outImage, int width, int height);
+	static cv::Mat resize(const cv::Mat& inImage, int width, int height);
 
 	std::vector<uchar> getPixelsGray() const;
 	std::vector<uchar> getPixelsGray(int width, int height) const;

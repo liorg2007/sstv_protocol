@@ -8,9 +8,12 @@ Image::Image(const std::string& path)
   _channels = _image.channels();
 }
 
-void Image::resize(const cv::Mat& inImage, cv::Mat& outImage, int width, int height)
+cv::Mat Image::resize(const cv::Mat& inImage, int width, int height)
 {
+  cv::Mat outImage;
   cv::resize(inImage, outImage, cv::Size(width, height));
+
+  return outImage;
 }
 
 std::vector<uchar> Image::getPixelsGray() const
@@ -33,7 +36,7 @@ std::vector<uchar> Image::getPixelsGray(int width, int height) const
   cv::Mat resized;
   cv::cvtColor(_image, grayImage, cv::COLOR_BGR2GRAY);
 
-  resize(grayImage, resized, width, height);
+  resized = resize(grayImage, width, height);
 
   std::vector<uchar> pixels(width * height);
   for (int i = 0; i < height; i++) {
@@ -66,7 +69,7 @@ std::vector<cv::Vec3b> Image::getPixelsColor(int width, int height) const
     throw std::runtime_error("Image is not a 3-channel color image");
   }
 
-  resize(_image, resized, width, height);
+  resized = resize(_image, width, height);
 
   std::vector<cv::Vec3b> pixels(width * height);
   for (int i = 0; i < height; i++) {
