@@ -1,6 +1,5 @@
 #include "Image.hpp"
 
-
 Image::Image(const std::string& path)
 	:_image(cv::imread(path))
 {
